@@ -1,0 +1,213 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 28px;
+
+}
+
+.menusearchdiv {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    margin-left: 8px;
+
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ff6347;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+
+.menua,
+.menua1,
+.menua2,
+.menua3,
+.menua4,
+.menua5 {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menua:hover,
+.menua1,
+.menua2,
+.menua3,
+.menua4,
+.menua5 {
+    transform: translateY(-5px);
+}
+
+.breakfast,
+.salad,
+.soup,
+.hotmeal,
+.desert,
+.drink {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.breakfast:hover,
+.salad:hover,
+.soup:hover,
+.hotmeal:hover,
+.desert:hover,
+.drink:hover {
+    transform: scale(1.05);
+}
+
+.breakfast {
+    background-image: url(https://eskapas.com/wp-content/uploads/2021/01/turkish-breakfast-2.jpg);
+}
+
+.salad {
+    background-image: url(https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Greek-Salad-main.jpg);
+}
+
+.soup {
+    background-image: url(https://assets.unileversolutions.com/recipes-v3/228534-default.jpg);
+}
+
+.hotmeal {
+    background-image: url(https://iasbh.tmgrup.com.tr/f62a7a/650/344/0/0/724/380?u=https://isbh.tmgrup.com.tr/sbh/2020/07/04/en-kolay-ana-yemek-tarifleri-etli-ve-etsiz-ana-yemek-cesitleri-1593818417361.jpg);
+}
+
+.desert {
+    background-image: url(https://images.immediate.co.uk/production/volatile/sites/2/2022/04/Tiramisu-e2a657d.jpg?quality=90&resize=556,505);
+}
+
+.drink {
+    background-image: url(https://thebigmansworld.com/wp-content/uploads/2021/07/keto-drink-mix4.jpeg);
+}
+
+.bigmenu {
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #e75b45;
+    padding: 15px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav li {
+    margin: 0 15px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav li a:hover {
+    background-color: #f0f0f0;
+    color: #ff4500;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    body {
+        font-size: 14px; 
+    }
+
+    .bigmenu {
+        padding: 5px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .menua,
+    .menua1,
+    .menua2,
+    .menua3,
+    .menua4,
+    .menua5 {
+        width: 80%;
+    }
+
+    .breakfast,
+    .salad,
+    .soup,
+    .hotmeal,
+    .desert,
+    .drink {
+        width: 80%;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav li {
+        margin: 10px 0;
+    }
+
+    .nav li a {
+        padding: 10px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    
+} 
+

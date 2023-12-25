@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #e75b45;
+    padding: 15px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.orange {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.orange li {
+    margin: 0 15px;
+}
+
+.orange li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.orange li a:hover {
+    background-color: #f0f0f0;
+    color: #ff4500;
+}
+
+.form {
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="number"],
+.form textarea,
+.form button {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e75b45;
+    color: white;
+}
+
+button:hover {
+    background-color: #ff4500;
+    color: white;
+}
+
+.media {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 39%;
+}
+
+.map {
+    margin-left: 8%;
+    margin-top: 55px;
+    border: 1px solid black;
+    margin-right: 120px;
+    background-color: #e75b45;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 87%;
+    padding: 80px;
+}
+
+.map h2 {
+    width: 16%;
+    margin-top: 30px;
+    margin-left: 40%;
+    color: white;
+}
+
+.media iframe {
+    width: 100%;
+}
+
+.media h2 {
+    font-size: 20px;
+}
+
+.media p {
+    font-size: 14px;
+}
+
+.media .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.text {
+    border: 1px solid black;
+    border-radius: 40px;
+    text-align: center;
+    width: 35%;
+    padding: 37px;
+    margin-top: -37%;
+    margin-left: 37px
+}
+
+.form {
+    border: 1px solid black;
+    width: 35%;
+    margin: auto;
+    margin-top: 45px;
+}
+
+
+
+.media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.media .text {
+    font-family: 'Arial', sans-serif;
+}
+
+.media p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.media .logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.media .text,
+.media .map {
+    width: 58%;
+    margin-left: 60px;
+    padding: 39px;
+    margin: auto;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav li {
+        margin: 5px 0;
+    }
+
+    .nav li a {
+        padding: 8px 15px;
+        margin: 5px 0;
+    }
+
+    .orange {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .orange li {
+        margin: 0 10px;
+    }
+
+    .orange li a {
+        padding: 6px 12px;
+        border-radius: 3px;
+    }
+
+    .form {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="number"],
+    .form textarea,
+    .form button {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    .media {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .map iframe {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .text {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .media p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .media .logo {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .orange {
+        display: block;
+        padding: 0;
+    }
+
+    .orange li {
+        margin: 0;
+    }
+
+    .orange li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+}
