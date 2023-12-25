@@ -1,4 +1,4 @@
-function odemeEdildiMesaji() {
+function odemeEdildimesaji() {
 
     let cardNumber = document.getElementById("cardNumber").value;
     if (cardNumber.length !== 16) {
