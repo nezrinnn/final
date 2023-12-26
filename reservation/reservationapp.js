@@ -83,3 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         toCartButton.style.opacity = '0.5';
     });
 });
+
+
