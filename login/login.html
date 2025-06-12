@@ -42,14 +42,14 @@
       }
 
       if (validIds.includes(workerId)) {
-        window.location.href = "./home/index.html";
+        window.location.href = "../home/index.html";
       } else {
         errorMsg.textContent = "ID düzgün deyil. Zəhmət olmasa yenidən yoxlayın.";
       }
     }
     if (validIds.includes(workerId)) {
     localStorage.setItem("loggedIn", "true");
-    window.location.href = "./home/index.html";
+    window.location.href = "../home/index.html";
 }
 
   </script>
