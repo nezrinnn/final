@@ -1,203 +1,178 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    color: #4B3621;
-    background-repeat: no-repeat;
-    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://www.netkurumsal.com/wp-content/uploads/2017/10/restoran.jpg');
     background-size: cover;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
-
-.reservationdiv {
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
-
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    border: 2px solid black;
-    background-color: #FFF;
-}
-
-h2 {
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select {
-    width: calc(100% - 12px);
-    padding: 6px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-    background-color: white;
-}
-
-button {
-    width: 100%;
-    padding: 8px;
-    background-color: #ff6347;
-    color: #FFF;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-}
-
-button:hover {
-    background-color: #ff4500;
-}
-
-.reservation-list {
-    display: flex;
-    flex-direction: column;
-  align-items: center;
-    margin-top: 20px;
-}
-
-.list li {
-    border: 1px solid #ccc;
-}
-
-.list {
-    width: 100%;
-    max-width: 400px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border: 1px solid black;
-}
-
-#list-container {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.Continue {
-    margin-top: 15px;
-}
-
-.button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff6347;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(2px);
+    min-height: 100vh;
     color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #ff4500;
+
+/* Overlay effekt */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.6); /* Şəffaf tünd qat */
+    z-index: -1;
 }
 
+
+/* Navigation */
 nav {
-    background-color: #e75b45;
+    background: rgba(0, 0, 0, 0.6);
     padding: 15px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-.nav li {
-    margin: 0 15px;
+    gap: 30px;
 }
 
 .nav li a {
     text-decoration: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    color: #fff;
     font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
 .nav li a:hover {
-    background-color: #f0f0f0;
-    color: #ff4500;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.tocart {
-    margin-top: 10px;
+/* Reservation Form - Glassmorphism Style */
+.reservationdiv {
+    max-width: 600px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    padding: 30px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.tocart {
+.reservationdiv h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffcc70;
+}
+
+.reservationdiv label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.reservationdiv input,
+.reservationdiv select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.reservationdiv button {
+    background: linear-gradient(135deg, #ffcc70, #ff7c5c);
+    color: #000;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.reservationdiv button:hover {
+    transform: scale(1.05);
+}
+
+/* Reservation List */
+.reservation-list {
+    max-width: 800px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#list-container {
+    list-style: none;
+}
+
+#list-container li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 5px solid #ffcc70;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Continue Buttons */
+.Continue {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.Continue .button,
+.Continue .tocart a {
+    background: linear-gradient(135deg, #ffcc70, #ff7c5c);
+    color: #000;
+    padding: 10px 18px;
     text-decoration: none;
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #ff4500;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.2s;
 }
 
-.tocart:hover {
-    background-color: #ff6347;
+.Continue .button:hover,
+.Continue .tocart a:hover {
+    transform: scale(1.05);
 }
 
-.tocart a {
-    color: inherit;
-    text-decoration: none;
-}
-
-@media screen and (min-width: 300px) and (max-width: 600px) {
+/* Responsive */
+@media (max-width: 600px) {
     .nav {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
     }
 
-    .nav li {
-        margin: 10px 0;
-    }
-
-    .nav li a {
-        padding: 10px 20px;
-        display: block;
-        text-align: center;
-    }
-    
-    .reservationdiv {
+    .reservationdiv, .reservation-list {
         margin: 20px;
-    }
-
-    .reservationdiv label,
-    .reservationdiv input,
-    .reservationdiv select,
-    .reservationdiv button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .reservation-list {
-        margin: 20px;
+        padding: 20px;
     }
 
     .Continue {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .Continue .button,
-    .Continue .tocart {
-        width: 100%;
-        margin-bottom: 10px;
+        gap: 10px;
     }
 }
-

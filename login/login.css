@@ -1,0 +1,70 @@
+/* Ümumi səhifə tərzi */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://azerenerji.gov.az/site/assets/images/news/600x400/1702627760.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Giriş formu stili */
+.login-form {
+  background-color: rgba(255, 255, 255, 0.93);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  text-align: center;
+}
+
+/* Başlıq */
+.login-form h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* Input sahələri */
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #007acc;
+  outline: none;
+}
+
+/* Daxil ol düyməsi */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #005fa3;
+}
+
+/* Xəta mesajı */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

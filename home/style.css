@@ -1,185 +1,216 @@
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f8f8f8;
-    color: #333;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero bölməsi */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/fotos-premium/apetitoso-filete-ternera-asado-gourmet-gajos-patata-otras-verduras_711700-920.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Blur overlay */
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+/* Mərkəzi məzmun */
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #ffcc70;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease;
+}
+
+.checkmenu {
+    background: linear-gradient(135deg, #ffcc70, #ff7c5c);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.checkmenu:hover {
+    transform: scale(1.05);
+}
+
+/* Slider şəkilləri */
+.slider {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+}
+
+.slider img {
+    height: 120px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Animasiya */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivlik */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .slider img {
+        height: 80px;
+    }
+}
+
+/* Navigasiya menyusu */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease;
+}
+
+nav ul.orange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
 
-
-nav {
-    background-color: #e75b45;
-    padding: 15px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.orange {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-.orange li {
-    margin: 0 15px;
-}
-
-.orange li a {
-    text-decoration: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}
-
-.orange li a:hover {
-    background-color: #f0f0f0;
-    color: #ff4500;
-}
-
-
-header {
-    text-align: center;
-    padding: 60px 0;
-}
-
-.name {
-    font-size: 3em;
-    color: #ff6347;
-    font-family: 'Arial Black', sans-serif;
-    text-transform: uppercase;
-}
-
-
-
-.content {
-    text-align: center;
-    padding: 30px;
-}
-
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.checkmenu {
+nav ul.orange li a {
     display: inline-block;
-    padding: 12px 25px;
+    color: #ffffff;
     text-decoration: none;
-    background-color: #ff6347;
-    color: #fff;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.checkmenu:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
-}
-
-
-.slider {
-    max-width: 100%;
-    overflow: hidden;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.slider img {
+nav ul.orange li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
     width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, #ffcc70, #ff7c5c);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul.orange li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav ul.orange li a:hover {
+    color: #ffcc70;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive düzəlişlər */
+@media (max-width: 768px) {
+    nav ul.orange {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul.orange li a {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Hər bir şəkil üçün animasiya və uyğun ölçüləndirmə */
+.slider img {
+    width: 100%;
     height: auto;
-    display: block;
+    display: none;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    transition: opacity 1s ease-in-out;
 }
 
-
-footer {
-    text-align: center;
-    padding: 25px 0;
-    background-color: #e75b45;
-    margin-top: 30px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    color: white;
+/* Slayd arxa fon konteyneri */
+.background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
 }
 
-p {
-    color: black;
-}
-footer p{
-    color:white;
-}
-@media screen and (max-width: 600px) {
-    .orange {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .orange li {
-        margin: 8px 10px;
-    }}
-    
-@media screen and (max-width: 600px) {
-    .orange {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .orange li {
-        margin: 8px 5px;
-    }
-
-    .text {
-        padding: 15px;
-    }
-
-    .text h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    .text p {
-        font-size: 14px;
-    }
-
-    .slider {
-        margin-left: 0;
-    }
+.background-slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    filter: blur(4px) brightness(0.8);
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px) {
-    .orange {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .orange li {
-        margin: 8px;
-    }
-
-    .text {
-        padding: 15px;
-    }
-
-    .text h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    .text p {
-        font-size: 14px;
-    }
-
-    .slider {
-        margin-left: 0;
-    }
+/* Aktiv şəkil görünəcək */
+.background-slideshow img.active {
+    opacity: 1;
+    z-index: -1;
 }

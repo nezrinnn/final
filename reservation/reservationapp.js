@@ -1,87 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const reservationButton = document.getElementById('reservationButton');
-    const changeButton = document.querySelector('.button');
-    const toCartButton = document.querySelector('.tocart');
-    const listContainer = document.getElementById('list-container');
-    const inputs = document.querySelectorAll('input[required], select');
+function submitReservation() {
+    const name = document.getElementById('name').value.trim();
+    const surname = document.getElementById('surname').value.trim();
+    const table = document.getElementById('table').value;
+    const time = document.getElementById('time').value;
+    const workerId = document.getElementById('workerId').value.trim();
+    const message = document.getElementById('message');
 
+    // Sadə ID yoxlaması üçün 10 nümunə
+    const validIds = [
+        'AZE00001', 'AZE00002', 'AZE00003', 'AZE00004', 'AZE00005',
+        'AZE00006', 'AZE00007', 'AZE00008', 'AZE00009', 'AZE00010'
+    ];
 
-    toCartButton.style.pointerEvents = 'none';
-    toCartButton.style.opacity = '0.5';
+    if (!name || !surname || !table || !time || !workerId) {
+        message.style.color = 'red';
+        message.textContent = "Zəhmət olmasa bütün xanaları doldurun.";
+        return;
+    }
 
-    reservationButton.addEventListener('click', () => {
-        let valid = true;
-
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                input.style.borderColor = 'red';
-                valid = false;
-            } else {
-                input.style.borderColor = '';
-            }
-        });
-
-        if (valid) {
-            const count = document.querySelector('.selec').value;
-            const date = document.querySelector('input[type="date"]').value;
-            const time = document.querySelector('input[type="time"]').value;
-            const name = document.getElementById('name').value.trim();
-            const surname = document.getElementById('surname').value.trim();
-            const email = document.getElementById('email').value;
-            const tel = document.getElementById('tel').value;
-
-            if (!count || !date || !time || !name || !surname || !email || !tel || tel.length !== 10 || /\s/.test(name) || /\s/.test(surname)) {
-                alert('Zəhmət olmasa bütün məlumatları düzgün daxil edin.');
-            } else {
-                const reservationDetails = `
-                    <li>
-                        <strong>Nəfər sayı:</strong> ${count}<br>
-                        <strong>Tarix:</strong> ${date}<br>
-                        <strong>Saat:</strong> ${time}<br>
-                        <strong>Ad:</strong> ${name}<br>
-                        <strong>Soyad:</strong> ${surname}<br>
-                        <strong>Email:</strong> ${email}<br>
-                        <strong>Tel:</strong> ${tel}<br>
-                    </li>
-                `;
-
-                listContainer.innerHTML += reservationDetails;
-
-                inputs.forEach(input => {
-                    input.value = '';
-                });
-
-
-                if (listContainer.children.length === 0) {
-                    toCartButton.style.pointerEvents = 'none';
-                    toCartButton.style.opacity = '0.5';
-                } else {
-                    toCartButton.style.pointerEvents = 'auto';
-                    toCartButton.style.opacity = '1';
-                }
-            }
-        }
-    });
-
-
-    changeButton.addEventListener('click', () => {
-        listContainer.innerHTML = '';
-
-
-        inputs.forEach(input => {
-            input.value = '';
-            input.style.borderColor = '';
-        });
-
-
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-
-        toCartButton.style.pointerEvents = 'none';
-        toCartButton.style.opacity = '0.5';
-    });
-});
-
-
+    if (validIds.includes(workerId)) {
+        message.style.color = 'green';
+        message.textContent = `Sizin rezerviniz qəbul olunmuşdur (${table}, ${time})`;
+    } else {
+        message.style.color = 'red';
+        message.textContent = "Yalnız Azerenerji işçiləri rezervasiya edə bilər.";
+    }
+}

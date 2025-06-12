@@ -1,122 +1,126 @@
-body,
-h2,
-p {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: #ff6347;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://i.pinimg.com/236x/ba/30/4c/ba304c8a8ef933ff21ae7f7c09a8eac6.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px 20px;
 }
+
 h2 {
     text-align: center;
-    margin-top: 20px;
-    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 25px 0 15px;
 }
 
-
-div {
-    display: inline-block;
-    width: 250px;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
-
-.first:hover {
-    transform: translateY(-5px);
-}
-
-
-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: transform 0.3s ease-in-out;
-}
-
-
-div:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-h2 {
-    font-size: 22px;
-    color: white;
-    margin-bottom: 5px;
-}
-.first h2{
-    color: black;
-}
-
-
-p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-
-div[style="display: none;"] {
-    display: none !important;
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
+/* Filter bölməsi */
 .pricefilter {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 96%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.pricefilter input[type="number"] {
-    padding: 8px;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 150px;
+.pricefilter input,
+.pricefilter button,
+.checkmenu {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.pricefilter input {
+    width: 140px;
 }
 
 .pricefilter button {
-    padding: 8px 15px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #00aaff;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    background-color: #ff450f;
-    color: wheat;
+    transition: 0.3s ease;
 }
 
 .pricefilter button:hover {
-    background-color: #e75b45;
-    color: white;
+    background-color: #0077aa;
 }
+
 .checkmenu {
-    display: inline-block;
-    padding: 12px 25px;
+    background: #fff;
+    color: #333;
     text-decoration: none;
-    background-color: #ff6347;
-    color: #fff;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-    margin-left: 50%;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .checkmenu:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
+    background: #f1f1f1;
+}
+
+/* Kartlar konteyneri */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kart dizaynı */
+.first {
+    background: rgba(255, 255, 255, 0.9);
+    width: 260px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.first:hover {
+    transform: translateY(-6px);
+}
+
+.first h2 {
+    font-size: 1.1rem;
+    color: #006eff;
+    margin-bottom: 10px;
+}
+
+.first p {
+    font-weight: bold;
+    color: #e85d04;
+    margin-bottom: 12px;
+}
+
+.first img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Mobil uyğunluq */
+@media screen and (max-width: 768px) {
+    .first {
+        width: 90%;
+    }
+}
+
+#cold {
+    background: url('https://i.pinimg.com/736x/83/1b/50/831b507adbe7b2dfdeba56b8879f437f.jpg');
+}
+
+#hot {
+background: url('https://imgs.mi9.com/uploads/other/4547/i-love-coffee-wallpaper_1920x1200_80505.jpg');
+}
+body{
+    background-color: hwb(193 78% 6%);
 }

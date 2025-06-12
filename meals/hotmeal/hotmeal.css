@@ -1,117 +1,115 @@
-body,
-h2,
-p {
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    background-color: #ff6347;
+    box-sizing: border-box;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Arial', sans-serif;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/frisco-redesign/Main_Nav_Italian_84f1495b-63be-49a7-91b0-08af4eb13576.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    padding: 30px 20px;
 }
 
-
-div {
-    display: inline-block;
-    width: 250px;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
-
- .first:hover {
-    transform: translateY(-5px);
-}  
-
-
-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: transform 0.3s ease-in-out;
-}
-
-
-div:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-h2 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-
-p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-
-div[style="display: none;"] {
-    display: none !important;
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
+/* Filter bölməsi */
 .pricefilter {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 96%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.pricefilter input[type="number"] {
-    padding: 8px;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 150px;
+.pricefilter input, .pricefilter button, .checkmenu {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.pricefilter input {
+    width: 140px;
 }
 
 .pricefilter button {
-    padding: 8px 15px;
-    background-color: #ff450f;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #ffa94d;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: white;
+    transition: 0.3s ease;
 }
 
 .pricefilter button:hover {
-    background-color: #e75b45;
+    background-color: #ff922b;
 }
+
 .checkmenu {
-    display: inline-block;
-    padding: 12px 25px;
+    background: #fff;
+    color: #333;
     text-decoration: none;
-    background-color: #ff6347;
-    color: #fff;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-    margin-left: 50%;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .checkmenu:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
+    background: #f1f1f1;
+}
+
+/* KARTLARI SƏTİRVARİ DÜZÜLŞ ÜÇÜN KONTEYNER */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Kartların yerləşəcəyi konteyner */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kart stili */
+.first {
+    background: rgba(255, 255, 255, 0.9);
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.first:hover {
+    transform: translateY(-8px);
+}
+
+.first h2 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.first p {
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 12px;
+}
+
+.first img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsiv görünüş */
+@media screen and (max-width: 768px) {
+    .first {
+        width: 90%;
+    }
 }

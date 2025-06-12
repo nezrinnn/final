@@ -1,213 +1,182 @@
-
-
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-    color: #333;
+    box-sizing: border-box;
 }
 
-h3 {
-    margin-top: 20px;
-    font-size: 28px;
-
-}
-
-.menusearchdiv {
-    margin-top: 20px;
-    padding: 20px;
-}
-
-input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 8px 16px;
-    margin-left: 8px;
-
+body,
+html {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #1a1a1a, #2c2c2c);
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #ff6347;
 }
 
-button:hover {
-    background-color: #ff4500;
+/* Navigasiya menyusu */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
 }
 
-
-.menua,
-.menua1,
-.menua2,
-.menua3,
-.menua4,
-.menua5 {
-    text-decoration: none;
-    color: black;
-    display: block;
-    margin: 20px auto;
-    width: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.menua:hover,
-.menua1,
-.menua2,
-.menua3,
-.menua4,
-.menua5 {
-    transform: translateY(-5px);
-}
-
-.breakfast,
-.salad,
-.soup,
-.hotmeal,
-.desert,
-.drink {
-    background-size: cover;
-    background-position: center;
-    height: 300px;
+ul.nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-
-.breakfast:hover,
-.salad:hover,
-.soup:hover,
-.hotmeal:hover,
-.desert:hover,
-.drink:hover {
-    transform: scale(1.05);
-}
-
-.breakfast {
-    background-image: url(https://eskapas.com/wp-content/uploads/2021/01/turkish-breakfast-2.jpg);
-}
-
-.salad {
-    background-image: url(https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Greek-Salad-main.jpg);
-}
-
-.soup {
-    background-image: url(https://assets.unileversolutions.com/recipes-v3/228534-default.jpg);
-}
-
-.hotmeal {
-    background-image: url(https://iasbh.tmgrup.com.tr/f62a7a/650/344/0/0/724/380?u=https://isbh.tmgrup.com.tr/sbh/2020/07/04/en-kolay-ana-yemek-tarifleri-etli-ve-etsiz-ana-yemek-cesitleri-1593818417361.jpg);
-}
-
-.desert {
-    background-image: url(https://images.immediate.co.uk/production/volatile/sites/2/2022/04/Tiramisu-e2a657d.jpg?quality=90&resize=556,505);
-}
-
-.drink {
-    background-image: url(https://thebigmansworld.com/wp-content/uploads/2021/07/keto-drink-mix4.jpeg);
-}
-
-.bigmenu {
-    border-radius: 5px;
-}
-
-nav {
-    background-color: #e75b45;
-    padding: 15px 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav {
+    gap: 25px;
     list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+ul.nav li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, #ffcc70, #ff7c5c);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+ul.nav li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+ul.nav li a:hover {
+    color: #ffcc70;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Başlıq */
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffcc70;
+    margin-top: 40px;
+    animation: fadeInDown 1.2s ease;
+}
+
+/* Axtarış input və button */
+.menusearchdiv {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    gap: 12px;
 }
 
-.nav li {
-    margin: 0 15px;
+#searchInput {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    font-size: 1rem;
+    background-color: #fefefe;
+    color: #000;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 204, 112, 0.3);
 }
 
-.nav li a {
-    text-decoration: none;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+button {
+    padding: 12px 20px;
+    border: none;
+    background: linear-gradient(135deg, #ffcc70, #ff7c5c);
+    color: #000;
     font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.nav li a:hover {
-    background-color: #f0f0f0;
-    color: #ff4500;
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 124, 92, 0.6);
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+/* Menyu kateqoriyaları */
+.bigmenu {
+    padding: 20px;
 }
 
-body {
-    background-color: #f8f8f8;
+.bigmenu>div {
+    margin: 20px auto;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (min-width: 300px) and (max-width: 600px) {
-    body {
-        font-size: 14px; 
+.bigmenu>div:hover {
+    transform: scale(1.03);
+}
+
+.bigmenu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.bigmenu h2 {
+    font-size: 1.5rem;
+    color: #ffcc70;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Animasiya */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
     }
 
-    .bigmenu {
-        padding: 5px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsiv düzəliş */
+@media (max-width: 768px) {
+    #searchInput {
+        width: 80%;
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 2rem;
     }
 
-    .menua,
-    .menua1,
-    .menua2,
-    .menua3,
-    .menua4,
-    .menua5 {
-        width: 80%;
+    .bigmenu>div {
+        max-width: 90%;
     }
 
-    .breakfast,
-    .salad,
-    .soup,
-    .hotmeal,
-    .desert,
-    .drink {
-        width: 80%;
-    }
-    .nav {
+    ul.nav {
         flex-direction: column;
-        align-items: center;
+        gap: 15px;
     }
-
-    .nav li {
-        margin: 10px 0;
-    }
-
-    .nav li a {
-        padding: 10px 20px;
-        display: block;
-        text-align: center;
-    }
-
-    
-} 
-
+}

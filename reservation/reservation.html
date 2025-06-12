@@ -1,90 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rezervation</title>
+    <title>Rezervasiya</title>
     <link rel="stylesheet" href="/reservation/reservation.css">
 </head>
-
 <body>
+
     <nav>
         <ul class="nav">
-            <li class="li0">
-                <a class="one" href="/home/index.html">Ana səhifə</a>
-            </li>
-            <li class="li1">
-                <a class="one" href="/about/about.html">Haqqında</a>
-            </li>
-
-            <li class="li1">
-                <a class="one" href="/menu/menu.html">Menyu</a>
-            </li>
-            <li>
-                <a class="one" href="/reservation/reservation.html">Reservasiya</a>
-            </li>
-            <li class="li1">
-                <a class="one" href="/contact/contact.html">Əlaqə</a>
-            </li>
-             <li class="li1">
-                <a class="one" href="/shop/shop.html">Mağaza</a>
-            </li> 
+            <li><a class="one" href="/home/index.html">Ana səhifə</a></li>
+            <li><a class="one" href="/about/about.html">Haqqında</a></li>
+            <li><a class="one" href="/menu/menu.html">Menyu</a></li>
+            <li><a class="one" href="/reservation/reservation.html">Rezervasiya</a></li>
+            <li><a class="one" href="/contact/contact.html">Əlaqə</a></li>
         </ul>
     </nav>
+
     <div class="reservationdiv">
+        <h2>Rezervasiya Formu</h2>
 
-        <h2>Rezervasiya</h2>
-        <label for="count">Nefər sayı:</label>
-        <select required class="selec">
-            <option value="2-4">2-4</option>
-            <option value="4-6">4-6</option>
-            <option value="6-8">6-8</option>
-        </select>
-        <br>
-        <br>
-        <label for="date">Tarix:</label>
-        <input required type="date" name="name" id="">
-        <br>
-        <br>
-        <label for="time">Saat:</label>
-        <input required type="time" name="time" id="">
-        <br>
-        <br>
         <label for="name">Ad:</label>
-        <input type="text" id="name" required>
-        <br>
-        <br>
+        <input type="text" id="name" required><br><br>
+
         <label for="surname">Soyad:</label>
-        <input type="text" id="surname" required>
-        <br>
-        <br>
-        <label for="email">Email:</label>
-        <input required id="email" type="email" >
-        <br>
-        <br>
-        <label for="tel">Telefon nömrəsi:</label>
-        <input id="tel" type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
-        <br>
-        <br>
-        <button id="reservationButton">Rezerv et</button>
+        <input type="text" id="surname" required><br><br>
 
+        <label for="table">Masa Nömrəsi:</label>
+        <select id="table" required>
+            <option value="">Seçin</option>
+            <option value="Masa 1">Masa 1</option>
+            <option value="Masa 2">Masa 2</option>
+            <option value="Masa 3">Masa 3</option>
+            <option value="Masa 3">Masa 4</option>
+            <option value="Masa 3">Masa 5</option>
+            <option value="Masa 3">Masa 6</option>
+            <option value="Masa 3">Masa 7</option>
+        </select><br><br>
+
+        <label for="time">Saat:</label>
+        <input type="time" id="time" required><br><br>
+
+        <label for="workerId">İşçi ID:</label>
+        <input type="text" id="workerId" required><br><br>
+
+        <button onclick="submitReservation()">Rezerv et</button>
+
+        <p id="message" style="margin-top:20px; font-weight: bold;"></p>
     </div>
-    <div class="reservation-list">
-        <div class="list">
-            <ul id="list-container">
-            </ul>
-            <div class="Continue">
-                <button class="button">Yeni</button>
-                <button class="tocart">
-                    <a href="/cart/cart.html">Ödəniş</a>
-                </button>
-    
-            </div>
-        </div>
-        
-    </div>
-<script defer src="/reservation/reservationapp.js"></script>
+
+    <script src="/reservation/reservationapp.js"></script>
 </body>
-
 </html>

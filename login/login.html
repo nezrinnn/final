@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>İşçi Girişi</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="login-form">
+    <h2>İşçi Girişi</h2>
+    <input type="text" id="name" placeholder="Ad" required>
+    <input type="text" id="surname" placeholder="Soyad" required>
+    <input type="text" id="workerId" placeholder="ID (məsələn, AZE00001)" required>
+    <button onclick="checkLogin()">Daxil ol</button>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const name = document.getElementById('name').value.trim();
+      const surname = document.getElementById('surname').value.trim();
+      const workerId = document.getElementById('workerId').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+
+      const validIds = [
+        "AZE00001", "AZE00002", "AZE00003", "AZE00004", "AZE00005",
+        "AZE00006", "AZE00007", "AZE00008", "AZE00009", "AZE00010",
+        "AZE00011", "AZE00012", "AZE00013", "AZE00014", "AZE00015",
+        "AZE00016", "AZE00017", "AZE00018", "AZE00019", "AZE00020",
+        "AZE00021", "AZE00022", "AZE00023", "AZE00024", "AZE00025",
+        "AZE00026", "AZE00027", "AZE00028", "AZE00029", "AZE00030",
+        "AZE00031", "AZE00032", "AZE00033", "AZE00034", "AZE00035",
+        "AZE00036", "AZE00037", "AZE00038", "AZE00039", "AZE00040",
+        "AZE00041", "AZE00042", "AZE00043", "AZE00044", "AZE00045",
+        "AZE00046", "AZE00047", "AZE00048", "AZE00049", "AZE00050"
+      ];
+
+      if (!name || !surname || !workerId) {
+        errorMsg.textContent = "Zəhmət olmasa bütün xanaları doldurun.";
+        return;
+      }
+
+      if (validIds.includes(workerId)) {
+        window.location.href = "/home/index.html";
+      } else {
+        errorMsg.textContent = "ID düzgün deyil. Zəhmət olmasa yenidən yoxlayın.";
+      }
+    }
+    if (validIds.includes(workerId)) {
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "/home/index.html";
+}
+
+  </script>
+
+</body>
+</html>
